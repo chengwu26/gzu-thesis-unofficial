@@ -20,8 +20,10 @@
   h(25pt)
   box(image("../../assets/gzu_name.png"))
   v(1fr)
-  show title: set text(zh(-3))
-  title[论文（设计）题目：#context document.title]
+  text(size: zh(2))[本科毕业论文（设计）]
+  v(1fr)
+  show title: set text(zh(-2))
+  title[#context document.title]
   v(1fr)
 
   context {
