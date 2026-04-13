@@ -121,15 +121,15 @@
   counter(page).update(1) // 目录、摘要页码使用罗马数字
   set page(
     numbering: "I",
-    header: [
+    header: context [
       #set text(zh(5))
       #v(1fr)
       #place(dx: 25%, dy: -25%, image("../assets/gzu_logo.png", height: 1.22cm))
       #place(center)[贵州大学毕业论文（设计）]
       #h(1fr)
-      第#context counter(page).display()页
+      第#counter(page).display()页
       #v(3pt)
-      #line(length: 100%, stroke: 0.08em + black)
+      #line(length: 100%, stroke: 0.08em + text.fill)
     ],
   )
   outline(depth: 3, title: "目录")
