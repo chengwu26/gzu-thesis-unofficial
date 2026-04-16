@@ -4,7 +4,7 @@
 #let integrity-statement(sign, date) = [
   #set heading(numbering: none, outlined: false)
   #show heading: set text(size: zh(3))
-  #align(center)[= 贵州大学本科毕业论文（设计）\ 诚信责任书]
+  = 贵州大学本科毕业论文（设计）\ 诚信责任书
 
   #set text(size: zh(4))
   #v(1em)
