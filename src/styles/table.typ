@@ -20,20 +20,22 @@
   level: 1,
   ..children,
 ) = {
-  let continued-cell = table.cell(colspan: columns, {
-    pdf.artifact(
-      context if _continued-header-state.get() {
-        align(center)[
-          #set text(font: fonts.sans, size: zh(5))
-          表#context counter(figure.where(kind: table)).display()#h(0.4em, weak: true)（续）
-          #v(-0.10em)
-        ]
-      } else {
-        v(-0.9em)
-        _continued-header-state.update(true)
-      },
-    )
-  })
+  let continued-cell = table.cell(
+    colspan: columns,
+    inset: (bottom: 9pt, top: 0pt),
+    {
+      pdf.artifact(
+        context if _continued-header-state.get() {
+          align(center)[
+            #set text(font: fonts.sans, size: zh(5))
+            表#context counter(figure.where(kind: table)).display()#h(0.4em, weak: true)（续）
+          ]
+        } else {
+          v(-9pt)
+          _continued-header-state.update(true)
+        },
+      )
+    })
 
   table.header(
     repeat: true,
